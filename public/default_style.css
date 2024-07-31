@@ -1,0 +1,13 @@
+.my_class {
+    margin-top: 300px!important;
+}
+
+#my_map {
+	min-height: 458px;
+	width: auto;
+	height: auto;
+}
+
+/* [class*="copyrights-pane"] {
+	display: none !important;
+} */
