@@ -18,9 +18,9 @@ use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 
 Route::middleware('guest')->group(function () {
-    Route::get('register', [RegisterController::class, 'view_create'])->name('register');
+    Route::get('/', [RegisterController::class, 'view_create'])->name('register');
 
-    Route::post('register', [RegisterController::class, 'create']);
+    Route::post('/', [RegisterController::class, 'create']);
 
     Route::get('/login', [LoginController::class, 'view_login'])->name('login');
 
@@ -57,7 +57,7 @@ Route::middleware('auth')->group(function () {
         ->name('verification.send');
 
     Route::get('/email_verify/{id}/{hash}', [VerifyEmailController::class, '__invoke'])
-        ->middleware('signed')
+        // ->middleware('signed')
         ->name('verification.verify');
 
     Route::get('/confirm_password', [PasswordConfirmationController::class, 'show'])
